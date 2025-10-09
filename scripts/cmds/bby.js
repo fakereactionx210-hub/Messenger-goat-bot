@@ -168,6 +168,7 @@ module.exports.onChat = async ({
   "😼 Dekhlei tor chokh e chemistry lage... physics nai?😵‍💫",
   "😇 Bujhlam, tui flirt kora sikhli amar theke!🐸💔",
   "🥀 আরে কে আমাকে bby ডাকলো এত আদর করে 😳💖",
+  "amake na bole amr boss salmu ke bolo 🤭😝🫶",
   "👀 Toke dekhe mon chay... daily dekhi!🤪",
   "🥺amake na deke amr boss ar inbox a nok deo my boss inbox id  https://www.facebook.com/nx210.is.back🫠 ",
   "হায়, এমন মিষ্টি ডাক শুনে তো হৃদয় গলে গেল 🧊➡️💞",
