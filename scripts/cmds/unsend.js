@@ -1,37 +1,36 @@
-const UNSEND_EMOJIS = ["😾", "😡", "🤬"]; // এখানে তুমি ইচ্ছা মতো ইমোজি যোগ করতে পারো
+/cmd install unsend.js const { GoatWrapper } = require("fca-liane-utils");module.exports = {
+	config: {
+		name: "unsend",
+		aliases: ["rmv", "u", "uns"],
+		version: "1.2",
+		author: "nx",
+		countDown: 5,
+		role: 0,
+		description: {
+			vi: "Gỡ tin nhắn của bot",
+			en: "Unsend bot's message"
+		},
+		category: "𝗕𝗢𝗫",
+		guide: {
+			vi: "reply tin nhắn muốn gỡ của bot và gọi lệnh {pn}",
+			en: "reply the message you want to unsend and call the command {pn}"
+		}
+	},
 
-module.exports = {
-  config: {
-    name: "unsend",
-    aliases: ["u", "uns"],
-    version: "2.1",
-    author: "nx",
-    role: 0,
-    description: "Automatically unsends a message when someone reacts with 😾, 😡, or 🤬",
-    category: "reaction"
-  },
+	langs: {
+		vi: {
+			syntaxError: "Vui lòng reply tin nhắn muốn gỡ của bot"
+		},
+		en: {
+			syntaxError: "Please reply the message you want to unsend"
+		}
+	},
 
-  // 🟢 GoatBot এই ফাংশনটি ইনস্টল চেক করার সময় খোঁজে, তাই খালি রাখলেও দিতে হবে
-  onStart: async function () {
-    // কোনো কিছু না করলেও সমস্যা নেই
-  },
-
-  // 🟡 এই অংশটাই মূল কাজ করবে
-  onReaction: async function ({ event, api }) {
-    try {
-      const { reaction, messageID } = event;
-
-      // যদি রিঅ্যাকশন আমাদের নির্ধারিত ইমোজির মধ্যে থাকে
-      if (UNSEND_EMOJIS.includes(reaction)) {
-        try {
-          await api.unsendMessage(messageID);
-          console.log(`✅ Message unsent due to reaction: ${reaction}`);
-        } catch (err) {
-          console.error("❌ Failed to unsend message:", err);
-        }
-      }
-    } catch (err) {
-      console.error("⚠️ Error in unsend.js:", err);
-    }
-  }
+	onStart: async function ({ message, event, api, getLang }) {
+		if (!event.messageReply || event.messageReply.senderID != api.getCurrentUserID())
+			return message.reply(getLang("syntaxError"));
+		message.unsend(event.messageReply.messageID);
+	}
 };
+const wrapper = new GoatWrapper(module.exports);
+wrapper.applyNoPrefix({ allowPrefix: true });
