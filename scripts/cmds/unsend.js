@@ -1,4 +1,4 @@
-/cmd install unsend.js const { GoatWrapper } = require("fca-liane-utils");module.exports = {
+const { GoatWrapper } = require("fca-liane-utils");module.exports = {
 	config: {
 		name: "unsend",
 		aliases: ["rmv", "u", "uns"],
