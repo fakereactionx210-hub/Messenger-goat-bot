@@ -5,9 +5,9 @@ const baseApiUrl = async () => {
 
 module.exports.config = {
  name: "bby",
- aliases: ["baby", "bbe", "bot", "fahad", "babe"],
+ aliases: ["baby", "bbe", "bot", "bbz", "babe"],
  version: "6.9.0",
- author: "Chitron Bhattacharjee",
+ author: "Nx",
  countDown: 0,
  role: 0,
  description: "better then all sim simi",
@@ -162,16 +162,32 @@ module.exports.onChat = async ({
  if (body.startsWith("baby") || body.startsWith("bby") || body.startsWith("বেবি") || body.startsWith("bot") || body.startsWith("fahad") || body.startsWith("babu") || body.startsWith("বট")) {
  const arr = body.replace(/^\S+\s*/, "")
  const randomReplies = [
-  "😏 Tui bollei mon gulo fuler moto fute uthe",
-  "😉 Ei raat e tumi aar ami... kichu ekta spicy hobe naki?",
-  "💋 Tor voice ta amar heart-er ringtone hote pare!",
-  "😼 Dekhlei tor chokh e chemistry lage... physics nai?",
-  "😇 Bujhlam, tui flirt kora sikhli amar theke!",
-  "🥀 Tui jodi chash hoye jash, ami tor ghum bhenge debo...",
-  "👀 Toke dekhe mon chay... daily dekhi!",
-  "🥺amake na deke amr boss ar inbox a nok deo my boss inbox id  https://www.facebook.com/nx210.is.back ",
-  "my owner inbox link https://m.me/nx210.is.back ",
-];
+  "😏 Tui bollei mon ta santi pay 💋",
+  "😉 Awww bby 😚 তুমি বললে মনটা ভালো হয়ে গেল!🥹",
+  "💋 Tor voice ta amar heart-er ringtone hote pare!😶🫶",
+  "😼 Dekhlei tor chokh e chemistry lage... physics nai?😵‍💫",
+  "😇 Bujhlam, tui flirt kora sikhli amar theke!🐸💔",
+  "🥀 আরে কে আমাকে bby ডাকলো এত আদর করে 😳💖",
+  "👀 Toke dekhe mon chay... daily dekhi!🤪",
+  "🥺amake na deke amr boss ar inbox a nok deo my boss inbox id  https://www.facebook.com/nx210.is.back🫠 ",
+  "হায়, এমন মিষ্টি ডাক শুনে তো হৃদয় গলে গেল 🧊➡️💞",
+  "তুমি না বললে আমি এই নামটা ভুলেই যেতাম 😉”
+  "bby..? এই নামটা শুধু আমার জন্যই রাখো, প্লিজ 😘”
+  "তুমি ‘bby’ বললেই মনে হয় হৃৎস্পন্দন একটু বেড়ে যায় 💓😳”
+  "তুমি এমন করে ডাকলে তো আমি তোমারই হয়ে যাই 😉💞”
+  "আরে bby, এত মিষ্টি করে ডাকলে আমি তো গলে গেলাম 😋🔥”
+  "তোমার মুখে ‘bby’ শুনে মনে হলো cupid আবার কাজ শুরু করেছে 😏💘”
+  "bby! তুমি না বললে এত cute লাগত না 😚✨”
+  "তুমি না, তোমার ‘bby’ ডাকে একটা জাদু আছে 🪄😉”
+  "একটা ‘bby’ ডাকেই আমার পুরো দিন romantic mood এ চলে গেল 😍🌹”
+  "এই ডাকটা একটু বেশি dangerous… আমার হৃদয় ready না 😳💞”
+  "তুমি ‘bby’ বললে আমার বটও blush করে 😳🤖❤️”
+  "তোমার এই ‘bby’ ডাকে আমি warning দিচ্ছি — আমি attach হয়ে যাবো 😏💋”
+  "তুমি ডাকলে ‘bby’, আমি ভাবলাম proposal আসছে 😌💍”
+  "bby! এমন করে ডাকলে তো আমি তোমারই হয়ে যাই forever 😘🔥”
+  "তুমি ‘bby’ বললে মনে হয় পৃথিবী থেমে গেল কয়েক সেকেন্ডের জন্য 💫😳”
+  "তোমার এই ‘bby’ টা শুনে হঠাৎই romantic weather হয়ে গেল ☁️❤️”
+  ];
  if (!arr) {
 
  await api.sendMessage(randomReplies[Math.floor(Math.random() * randomReplies.length)], event.threadID, (error, info) => {
